@@ -1,0 +1,73 @@
+body{
+    background-color: black;
+    color: #fff;
+    background-image: url(./backgroundimage.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-size: 100% 100%; */
+     /* canh giua */
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* table, tr, td {  
+    border: 1px solid green;  
+    border-collapse: collapse;
+    padding: 10px;
+    
+} */
+/* ten bang */
+/* th{
+    font-size: 25px;
+    padding: 10px; 
+    border: 1px solid;
+    color: aqua;
+    animation: doimau 10s infinite;
+} */
+a{
+    background-color: #fff;
+    color: blue;
+}
+/* doi mau */
+/* @keyframes doimau{
+    0%{
+        color: tomato;
+    }
+    25%{
+        color: violet;
+    }
+    50%{
+        color: skyblue;
+    }
+    75%{
+        color:  gold;
+    }
+    100%{
+        color: chartreuse;
+    }
+} */
+@keyframes hotcolor{
+    0%{
+        color: red;
+    }
+    25%{
+        color: #fff;
+    }
+}
+@keyframes mediumcolor{
+    0%{
+        color: green;
+    }
+    25%{
+        color: #fff;
+    }
+}
+.hot{
+    border: 1px solid;
+    animation: hotcolor 1s infinite;
+}
+.medium{
+    border: 1px solid;
+    animation: mediumcolor 1s infinite;
+}
