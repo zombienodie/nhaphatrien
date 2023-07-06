@@ -35,6 +35,68 @@ namespace HelloWorld
 
     }
     class HelpYou{
+        private static int _numCount;
+        private int _num;
+        private int _num1;
+        private string _str;
+        
+        // properties
+        public static int NumLineFile
+        {
+            get
+            {
+                return _numCount;
+            }
+            set
+            {
+                _numCount = value;
+            }
+        }
+        public int Num
+        {
+            get
+            {
+                return _num;
+            }
+            set
+            {
+                _num = value;
+            }
+        }
+        public int Num1
+        {
+            get
+            {
+                return _num1;
+            }
+            set
+            {
+                _num1 = value;
+            }
+        }
+        public string Str
+        {
+            get
+            {
+                return _str;
+            }
+            set
+            {
+                _str = value;
+            }
+        }
+        
+        // 
+        public void SetCount(){
+            _numCount = 0;
+        }
+        public void Count(){
+            _numCount++;
+        }
+        public int GetCount(){
+            return _numCount;
+        }
+
         // tao thu muc
         public void TaoThuMuc(string nameFolder){
             // 1. Đường dẫn tới thư mục cần tạo New Directory
@@ -103,7 +165,7 @@ namespace HelloWorld
         }
         // ghi du lieu vao file voi 1 noi dung duy nhat (loc cac ky tu giong nhau)
         public string ThongKeDuLieuConLai(string nameFile,string nameFile1){
-            string str = "";
+            _str = "";
             bool b = false;
             // neu file da co
             if(File.Exists(nameFile) == true){
@@ -124,7 +186,7 @@ namespace HelloWorld
                     }
                     // lay ra cong ban chua lam
                     if(b == false){
-                        str =  str + r;
+                        _str =  _str + r;
                     }
                      
                 }
@@ -132,11 +194,11 @@ namespace HelloWorld
                 
                 // Console.ReadKey();
             }
-            return str;
+            return _str;
         }
         // ghi du lieu vao file voi 1 noi dung duy nhat (tra ve cac ky tu giong nhau)
         public string ThongKeDuLieuGiongNhau(string nameFile,string nameFile1){
-            string str = "";
+            _str = "";
             bool b = false;
             // neu file da co
             if(File.Exists(nameFile) == true){
@@ -157,7 +219,7 @@ namespace HelloWorld
                     }
                     // lay ra cong ban chua lam
                     if(b == true){
-                        str =  str + r;
+                        _str =  _str + r;
                     }
                      
                 }
@@ -165,39 +227,49 @@ namespace HelloWorld
                 
                 // Console.ReadKey();
             }
-            return str;
+            return _str;
         }
         // doc du lieu trong file
         public string DocFile(string nameFile){
-            string text = "...";
+            _str = "...";
             // neu file co ton tai
             if(File.Exists(nameFile) == true)
-                text = File.ReadAllText(nameFile);
-            return text;
+                _str = File.ReadAllText(nameFile);
+            return _str;
+        }
+        // doc du lieu trong file
+        public int DocFileReturnNum(string nameFile){
+            _str = "...";
+            // neu file co ton tai
+            if(File.Exists(nameFile) == true){
+                _str = File.ReadAllText(nameFile);
+                _num = int.Parse(_str);
+            }
+            return _num;
         }
         // doc du lieu trong file va tra ve vi tri can tim
         public string DocFileVsFind(string nameFile,string strFind){
-            string text = "...";
+            _str = "...";
             // neu file co ton tai
             string[] lines = File.ReadAllLines(nameFile);
             foreach(string s in lines){
                 if(s.Contains(strFind))
-                    text = text + "> " + s + " <\n";
+                    _str = _str + "> " + s + " <\n";
                 else
-                    text = text + s + "\n";
+                    _str = _str + s + "\n";
             }
-            return text;
+            return _str;
         }
         // doc du lieu trong file va tra ve gia tri can tim
         public string DocFileVsReturnValueFind(string nameFile,string strFind){
-            string text = "...";
+            _str = "...";
             // neu file co ton tai
             string[] lines = File.ReadAllLines(nameFile);
             foreach(string s in lines){
                 if(strFind.Contains(s))
-                    text = s; 
+                    _str = s; 
             }
-            return text;
+            return _str;
         }
         // doc du lieu trong file va tra ve gia tri can tim
         public bool DocFileRTF(string nameFile,string strFind){
@@ -212,11 +284,11 @@ namespace HelloWorld
         }
         // doc du lieu trong file
         public string DocFileVsNeuDuLieuKhacRong(string data,string nameFile){
-            string text = "...";
+            _str = "...";
             // neu file co ton tai
             if(File.Exists(nameFile) == true && data.Replace(" ","") != "")
-                text = File.ReadAllText(nameFile);
-            return text;
+                _str = File.ReadAllText(nameFile);
+            return _str;
         }
         // liet ke thu muc va file
         public void LietKeFile(string nameFolder){
@@ -231,10 +303,10 @@ namespace HelloWorld
         }
         // liet ke thu muc va file
         public string KiemTraThuMucVsTen(string nameFolder){
-            string nameF = "...";
+            _str = "...";
             if(Directory.Exists(nameFolder) == true)
-                nameF = nameFolder.Substring(nameFolder.LastIndexOf("/")+1);
-            return nameF;
+                _str = nameFolder.Substring(nameFolder.LastIndexOf("/")+1);
+            return _str;
         }
         // dem ngay
         public string DemNgay(string date1,string date2){
@@ -254,39 +326,39 @@ namespace HelloWorld
         }
         // dem so dong trong file
         public int DemSoDongTrongFile(string nameFile){
-            int num = 0;
+            _num = 0;
             // 
             if(File.Exists(nameFile) == true){
                 string[] rF = File.ReadAllLines(nameFile);
                 foreach(string line in rF){
-                    num++;
+                    _num++;
                 }
             }
-            return num;
+            return _num;
         }
         // tra ve du lieu ngau nhien trong file
         public string ReturnRandomLineInFile(string nameFile){
-            string strT = "";
+            _str = "";
              // 
             if(File.Exists(nameFile) == true){
-                int iNumC = 0;
-                int iNumRd = 0;
+                _num = 0;
+                _num1 = 0;
                 Random rd = new Random();
                 // dem so dong trong file
                 string[] rF = File.ReadAllLines(nameFile);
                 foreach(string s in rF){
-                    iNumC++;
+                    _num++;
                 }
-                iNumRd = rd.Next(0,iNumC);
-                iNumC = 0;
+                _num1 = rd.Next(0,_num);
+                _num = 0;
                 // lay du lieu  string[] rF = File.ReadAllLines(nameFile);
                 foreach(string s in rF){
-                    if(iNumRd == iNumC)
-                        strT = s;
-                    iNumC++;
+                    if(_num1 == _num)
+                        _str = s;
+                    _num++;
                 }
             }
-            return strT;
+            return _str;
         }
         // hien thi ten thu muc
         public string TenThuMuc(string nameFolder){
@@ -305,14 +377,25 @@ namespace HelloWorld
         }
         // dem so luong thu muc
         public int DemThuMuc(string nameFolder){
-            int num = 0;
+            _num = 0;
             if(Directory.Exists(nameFolder) == true){
                 string[] getD = Directory.GetDirectories(nameFolder);
                 foreach(string d in getD){
-                    num++;
+                    _num++;
                 }
             }
-            return num;
+            return _num;
+        }
+        // dem so luong thu muc
+        public int DemFileTrongThuMuc(string nameFolder){
+            _num = 0;
+            if(Directory.Exists(nameFolder) == true){
+                string[] getD = Directory.GetFiles(nameFolder);
+                foreach(string d in getD){
+                    _num++;
+                }
+            }
+            return _num;
         }
         // mo duong dan
         public string MoDuongDan(string duongDan)
@@ -341,9 +424,9 @@ namespace HelloWorld
         }
         // tra va bien
         public string Value(){
-            string str = "";
-            str = Console.ReadLine();
-            return str;
+            _str = "";
+            _str = Console.ReadLine();
+            return _str;
         }
     }
 }
