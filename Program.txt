@@ -85,6 +85,7 @@ namespace HelloWorld
                 _str = value;
             }
         }
+      
         
         // 
         public void SetCount(){
@@ -118,14 +119,14 @@ namespace HelloWorld
             }
         }
         // tao file
-        public void TaoFileVsSuaLoi(string nameFile, int num){
+        public void TaoFileVsSuaLoi(string nameFile, string str){
             // neu file chua co
             if (File.Exists(nameFile) == false){
                 // sử dụng hàm tạo của lớp FileStream
                 FileStream fs = new FileStream(nameFile, FileMode.Create);
                 fs.Close();
                 StreamWriter sWriter = new StreamWriter(nameFile,true);//fs là 1 FileStream 
-                sWriter.Write(1 - num);
+                sWriter.Write(str);
                 sWriter.Close();
             }
         }
@@ -424,7 +425,6 @@ namespace HelloWorld
         }
         // tra va bien
         public string Value(){
-            _str = "";
             _str = Console.ReadLine();
             return _str;
         }
