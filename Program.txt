@@ -33,7 +33,6 @@ namespace HelloWorld
         }
         
 
-    }
     class HelpYou{
         private static int _numCount;
         private int _num;
@@ -462,6 +461,32 @@ namespace HelloWorld
                 }
             }
             return _str;
-        } 
+        }
+        // xep chuoi thanh nhung ky tu thang hang dung de tu dong xuong dong trong table
+        public void XepChuoiTratTuCuaTable(string str,char chDraw,int num){
+            _numCount = 0;
+            Console.Write(chDraw);
+            // 
+            foreach(char ch in str){
+                // 
+                _numCount++;
+                // 
+                Console.Write(ch);
+                // 
+                if(_numCount == num){
+                    Console.Write(chDraw + "\n" + chDraw);
+                    // 
+                    _numCount = 0;
+                }
+            }
+            if(num != 0){
+                // 
+                for(int i = 0;i < num - _numCount;i++){
+                    Console.Write(" ");
+                }
+                // 
+                Console.WriteLine(chDraw);
+            }
+        }
     }
 }
