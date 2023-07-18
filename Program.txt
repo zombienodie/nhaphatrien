@@ -97,7 +97,6 @@ namespace HelloWorld
         public int GetCount(){
             return _numCount;
         }
-
         // tao thu muc
         public void TaoThuMuc(string nameFolder){
             // 1. Đường dẫn tới thư mục cần tạo New Directory
@@ -428,5 +427,41 @@ namespace HelloWorld
             _str = Console.ReadLine();
             return _str;
         }
+        // dem so ky tu trong chuoi
+        public int CountStr(string strC){
+            _numCount = 0;
+            foreach(char ch in strC){
+                _numCount++;
+            }
+            return _numCount;
+        }
+        //ve cai qq gi v
+        public string Draw(int num,char ch){
+            _str = "";
+            _str = _str + ch;
+            // 
+            if(num != 0){
+                for(int i = 0;i < num;i++){
+                    _str = _str + ch;
+                }
+            }
+            return _str;
+        } 
+        //ve o vi tri chi dinh
+        public string DrawN(int num,int num1,char ch,char ch1){
+            _str = "";
+            _str = _str + ch;
+            // 
+            if(num != 0){
+                for(int i = 0;i < num;i++){
+                    // 
+                    if(i == num1)
+                         _str = _str + ch1;
+                    else
+                        _str = _str + ch;
+                }
+            }
+            return _str;
+        } 
     }
 }
