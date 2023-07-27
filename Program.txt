@@ -31,7 +31,22 @@ namespace HelloWorld
                 
             }while(str != "exit");
         }
-        
+        // 
+        public static void Table(string strT,string strC,HelpYou hy){
+            //TITLE
+            Console.WriteLine("┌{0}┐", hy.Draw(hy.CountStr(strT) - 1,'─'));
+            // title
+            Console.WriteLine("│{0}│",strT);
+            // 
+            Console.WriteLine("├{0}┤",hy.Draw(hy.CountStr(strT) - 1,'─'));
+           
+            // CONTENT
+            // Console.WriteLine("│{0}│",strC);
+            //     
+            hy.XepChuoiTratTuCuaTable(strC,'│',hy.CountStr(strT));
+            // 
+            Console.WriteLine("└{0}┘",hy.Draw(hy.CountStr(strT) - 1,'─'));
+        }
 
     class HelpYou{
         private static int _numCount;
