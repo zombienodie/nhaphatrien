@@ -47,6 +47,7 @@ namespace HelloWorld
             // 
             Console.WriteLine("└{0}┘",hy.Draw(hy.CountStr(strT) - 1,'─'));
         }
+    }
 
     class HelpYou{
         private static int _numCount;
