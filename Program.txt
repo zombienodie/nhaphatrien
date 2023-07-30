@@ -34,7 +34,7 @@ namespace HelloWorld
         // 
         public static void Table(string strT,string strC,HelpYou hy){
             //TITLE
-            Console.WriteLine("┌{0}┐", hy.Draw(hy.CountStr(strT) - 1,'─'));
+            Console.WriteLine("\n┌{0}┐", hy.Draw(hy.CountStr(strT) - 1,'─'));
             // title
             Console.WriteLine("│{0}│",strT);
             // 
@@ -48,7 +48,7 @@ namespace HelloWorld
             Console.WriteLine("└{0}┘",hy.Draw(hy.CountStr(strT) - 1,'─'));
         }
     }
-
+    // 
     class HelpYou{
         private static int _numCount;
         private int _num;
@@ -589,6 +589,56 @@ namespace HelloWorld
             if(_str == _strPassword)
                 return true;
             return false;
+        }
+        // 
+        public void PrintAllDirectory(string dirPath)
+        {
+            try
+            {
+                // Nếu bạn không có quyền truy cập thư mục 'dirPath' 
+                // một ngoại lệ UnauthorizedAccessException sẽ được ném ra.
+                IEnumerable<string> enums = Directory.EnumerateDirectories(dirPath); 
+                List<string> dirs = new List<string>(enums); 
+                foreach (var dir in dirs)
+                {
+                    Console.WriteLine(dir); 
+
+                    PrintAllDirectory(dir);
+                }
+            }
+            // Lỗi bảo mật khi truy cập vào thư mục mà bạn không có quyền.
+            catch (UnauthorizedAccessException e)
+            {
+                Console.WriteLine("Can not access directory: " + dirPath);
+                Console.WriteLine(e.Message);
+            }
+        }
+        // 
+        public void PrintAllFile(string pathfile)
+        {
+            string[] fileList = Directory.GetFiles(pathfile);//lay danh sách file cho vao mảng
+            string strFileName = "";
+            //duyet mang file trong thư mục
+            foreach (string fileName in fileList)
+            {
+                strFileName = "";
+                strFileName = Path.GetFileName(fileName).Trim();
+                ProcessFile(fileName, strFileName);
+               
+            }
+
+            string[] directorylist = Directory.GetDirectories(pathfile);//lấy danh sách target file cho vào mảng
+
+            //duyệt mảng target
+            foreach (string directory in directorylist)
+            {
+                PrintAllFile(directory);
+            }
+        }
+        // 
+        public void ProcessFile(string path,string strfileName)
+        {
+            Console.WriteLine("{0}", path);
         }
     }
 }
