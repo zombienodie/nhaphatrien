@@ -1,8 +1,10 @@
-﻿
+//04/08/2023
 using System;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
+using System.Collections;
+using System.Collections.Generic;
  
 namespace HelloWorld
 {
@@ -46,6 +48,13 @@ namespace HelloWorld
             hy.XepChuoiTratTuCuaTable(strC,'│',hy.CountStr(strT));
             // 
             Console.WriteLine("└{0}┘",hy.Draw(hy.CountStr(strT) - 1,'─'));
+        }
+    }
+    // 
+    public class myReverserClass : IComparer  {
+        // Calls CaseInsensitiveComparer.Compare with the parameters reversed.
+        int IComparer.Compare( Object x, Object y )  {
+            return( (new CaseInsensitiveComparer()).Compare( y, x ) );
         }
     }
     // 
