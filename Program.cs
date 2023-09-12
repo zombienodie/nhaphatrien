@@ -65,6 +65,7 @@ namespace HelloWorld
         private string _str;
         private string _strUserName;
         private string _strPassword;
+        private string _strChar;
         
         // properties
         public static int NumLineFile
@@ -131,6 +132,17 @@ namespace HelloWorld
             set
             {
                 _strPassword = value;
+            }
+        }
+        public string StrChar
+        {
+            get
+            {
+                return _strChar;
+            }
+            set
+            {
+                _strChar = value;
             }
         }
       
@@ -296,6 +308,25 @@ namespace HelloWorld
             return _str;
         }
         // doc du lieu trong file
+        public string DocFileReturnOneLineWithNumShow(string nameFile,int num1,int num2){
+            _str = "";
+            _strChar = "";
+            _numCount = 0;
+            // neu file co ton tai
+            string[] rF = File.ReadAllLines(nameFile);
+            foreach(string str in rF){
+                _str = _str + str;
+            }
+            // 
+            foreach(char ch in _str){
+                _numCount++;
+                // 
+                if(_numCount >= num1 && _numCount <= num2)
+                    _strChar = _strChar + ch;
+            }
+            return _strChar;
+        }
+        // doc du lieu trong file
         public int DocFileReturnNum(string nameFile){
             _str = "...";
             // neu file co ton tai
@@ -389,6 +420,23 @@ namespace HelloWorld
             if(File.Exists(nameFile) == true){
                 string[] rF = File.ReadAllLines(nameFile);
                 foreach(string line in rF){
+                    _num++;
+                }
+            }
+            return _num;
+        }
+        // dem ky tu trong file
+        public int DemKyTuTrongFile(string nameFile){
+            _num = 0;
+            _str = "";
+            // 
+            if(File.Exists(nameFile) == true){
+                string[] rF = File.ReadAllLines(nameFile);
+                foreach(string line in rF){
+                    _str = _str + line;
+                }
+                // 
+                foreach(char ch in _str){
                     _num++;
                 }
             }
