@@ -647,6 +647,29 @@ namespace HelloWorld
                 return true;
             return false;
         }
+     // 
+     public bool ValueYesNo(string str){
+         // 
+         ConsoleKeyInfo keyInfo;
+         // 
+         do
+         {
+             // 
+             Console.Write("\n{0}[Y/N] ",str);
+             // 
+             keyInfo = Console.ReadKey(true);
+         }
+         // Stops Getting Password Once Enter is Pressed
+         while (keyInfo.Key != ConsoleKey.Y && keyInfo.Key != ConsoleKey.N);
+         // 
+         if(keyInfo.Key == ConsoleKey.Y)
+             // 
+             return true;
+         // 
+         else
+             // 
+             return false;
+     }
         // 
         public void PrintAllDirectory(string dirPath)
         {
