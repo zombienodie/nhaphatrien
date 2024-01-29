@@ -31,44 +31,25 @@ a{
     color: blue;
 }
 /* doi mau */
-/* @keyframes doimau{
-    0%{
-        color: tomato;
-    }
-    25%{
-        color: violet;
-    }
-    50%{
-        color: skyblue;
-    }
-    75%{
-        color:  gold;
-    }
-    100%{
-        color: chartreuse;
-    }
-} */
-@keyframes hotcolor{
-    0%{
-        color: red;
-    }
-    25%{
-        color: #fff;
-    }
+@keyframes doimau{
+     0% {
+       color: tomato;
+     }
+     20% {
+       color: violet;
+     }
+     40% {
+       color: skyblue;
+     }
+     60% {
+       color: gold;
+     }
+     
+     80% {
+       color: chartreuse;
+     }
+     100% {
+       color: tomato;
+     }
 }
-@keyframes mediumcolor{
-    0%{
-        color: green;
-    }
-    25%{
-        color: #fff;
-    }
-}
-.hot{
-    border: 1px solid;
-    animation: hotcolor 1s infinite;
-}
-.medium{
-    border: 1px solid;
-    animation: mediumcolor 1s infinite;
-}
+
