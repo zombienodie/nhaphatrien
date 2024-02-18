@@ -1,4 +1,4 @@
-//04/08/2023
+//19/02/2024
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -327,14 +327,16 @@ namespace HelloWorld
             return _strChar;
         }
         // doc du lieu trong file
-        public int DocFileReturnNum(string nameFile){
-            _str = "...";
-            // neu file co ton tai
-            if(File.Exists(nameFile) == true){
-                _str = File.ReadAllText(nameFile);
-                _num = int.Parse(_str);
-            }
-            return _num;
+        public int DocFileReturnNum(string nameFile)
+        {
+             // 
+             _num = 0;
+             // neu file co ton tai
+             if (File.Exists(nameFile) == true)
+                  // 
+                  _num = int.Parse(File.ReadAllText(nameFile));
+             // 
+             return _num;
         }
         // doc du lieu trong file va tra ve vi tri can tim
         public string DocFileVsFind(string nameFile,string strFind){
@@ -532,6 +534,22 @@ namespace HelloWorld
         public string Value(){
             _str = Console.ReadLine();
             return _str;
+        }
+        // tra va bien
+        public string Value(string strName)
+        {
+             // 
+             Console.Write(strName);
+             _str = Console.ReadLine();
+             return _str;
+        }
+        // tra va bien
+        public int ValueInt(string strName)
+        {
+             // 
+             Console.Write(strName);
+             _num = int.Parse(Console.ReadLine());
+             return _num;
         }
         // dem so ky tu trong chuoi
         public int CountStr(string strC){
