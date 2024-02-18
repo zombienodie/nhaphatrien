@@ -329,14 +329,14 @@ namespace HelloWorld
         // doc du lieu trong file
         public int DocFileReturnNum(string nameFile)
         {
-             // 
-             _num = 0;
-             // neu file co ton tai
-             if (File.Exists(nameFile) == true)
-                  // 
-                  _num = int.Parse(File.ReadAllText(nameFile));
-             // 
-             return _num;
+            // 
+            _num = 0;
+            // neu file co ton tai
+            if (File.Exists(nameFile) == true)
+                 // 
+                 _num = int.Parse(File.ReadAllText(nameFile));
+            // 
+            return _num;
         }
         // doc du lieu trong file va tra ve vi tri can tim
         public string DocFileVsFind(string nameFile,string strFind){
@@ -538,18 +538,18 @@ namespace HelloWorld
         // tra va bien
         public string Value(string strName)
         {
-             // 
-             Console.Write(strName);
-             _str = Console.ReadLine();
-             return _str;
+            // 
+            Console.Write(strName);
+            _str = Console.ReadLine();
+            return _str;
         }
         // tra va bien
         public int ValueInt(string strName)
         {
-             // 
-             Console.Write(strName);
-             _num = int.Parse(Console.ReadLine());
-             return _num;
+            // 
+            Console.Write(strName);
+            _num = int.Parse(Console.ReadLine());
+            return _num;
         }
         // dem so ky tu trong chuoi
         public int CountStr(string strC){
