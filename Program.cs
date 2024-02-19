@@ -506,7 +506,7 @@ namespace HelloWorld
             return _num;
         }
         // mo duong dan
-        public string MoDuongDan(string duongDan)
+        public void MoDuongDan(string duongDan)
         {
             Process myProcess = new Process();
             try
@@ -521,7 +521,6 @@ namespace HelloWorld
                 Console.WriteLine(e.Message);
                 Console.ReadKey();
             }
-            return duongDan;
         }
         // ten file
         public string TenFile(string strNameFile){
