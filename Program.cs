@@ -444,6 +444,22 @@ namespace HelloWorld
             }
             return _num;
         }
+        // dem ky tu trong file
+        public int DemStr(string strSTR)
+        {
+             _num = 0;
+             _str = "";
+             // 
+             if (strSTR.Replace(" ", "") != "")
+             {
+                  // 
+                  foreach (char ch in strSTR)
+                  {
+                       _num++;
+                  }
+             }
+             return _num;
+        }
         // tra ve du lieu ngau nhien trong file
         public string ReturnRandomLineInFile(string nameFile){
             _str = "";
