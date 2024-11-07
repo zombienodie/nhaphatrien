@@ -1,4 +1,4 @@
-//19/02/2024
+//Name Project 07/11/2024 Version
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -12,26 +12,123 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string strBPC = @"BPC/";
+            string strSys = @"Sys/";
             string str = "";
-           
-            
+
+            // 
+            int[] arrNum = new int[] { };
+            string[] arrValue = new string[] { };
+ 
+            // 
             HelpYou hy = new HelpYou();
-
-
-          
+            Random rd = new Random();
+            DateTime dToday = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            
             // 
             do
             {
-                // xoa man hinh
-                Console.Clear();
-                
+                // 
+                try{
+                    // xoa man hinh
+                    Console.Clear();
+                    // 
+                    str = STR(str,$">",hy);
+                    // 
+                    CountList(strNameDirectory, arrValue, arrNum, hy);
+                // 
+                }catch(Exception e){
+                    // 
+                    Console.WriteLine(e);
+                    // 
+                    Console.ReadKey();
+                }
 
-                str = Console.ReadLine();
-                
-                
                 
             }while(str != "exit");
+        }
+        // 
+        public static string STR(string str,string strName,HelpYou hy){
+            // 
+            str = hy.Value($"{strName}").ToLower().Replace(" ","");
+            // 
+            return str;
+        }
+        // 
+        public static void CountList(string strC, string[] arrValue, int[] arrNum, HelpYou hy)
+        {
+            // 
+            if (Directory.Exists(strC) == true)
+            {
+                // 
+                hy.SetCount();
+                // 
+                arrNum = new int[hy.DemFileTrongThuMuc(strC)];
+                arrValue = new string[hy.DemFileTrongThuMuc(strC)];
+                // 
+                string[] gF = Directory.GetFiles(strC);
+                foreach (string f in gF)
+                {
+                        // 
+                        arrNum[hy.GetCount()] = hy.DocFileReturnNum(f);
+                        arrValue[hy.GetCount()] = hy.TenFile(f);
+                        // 
+                        hy.Count();
+                }
+                // 
+                IComparer myComparer = new myReverserClass();
+                // Sorts the entire Array using the default comparer.
+                // Array.Sort( arrNum, arrValue );
+                // Console.WriteLine( "After sorting the entire Array using the default comparer:" );
+                // PrintKeysAndValues( arrNum, arrValue );
+
+                // Sorts the entire Array using the reverse case-insensitive comparer.
+                Array.Sort(arrNum, arrValue, myComparer);
+                // Console.WriteLine( "After sorting the entire Array using the reverse case-insensitive comparer:" );
+                Console.WriteLine(" {0,-15}  {1}", "Object", "Days\n ------           ----");
+                PrintKeysAndValuesWithNum(arrNum, arrValue,20);
+            }
+        }
+        // 
+        // public static void PrintKeysAndValues(int[] myKeys, String[] myValues)
+        // {
+        //     for (int i = 0; i < myKeys.Length; i++)
+        //     {
+        //         Console.WriteLine(" {0,-15} +{1}",myValues[i],myKeys[i]);
+        //     }
+        //     Console.WriteLine();
+        // }
+        // // 
+        public static void PrintKeysAndValuesWithNum(int[] myKeys, String[] myValues,int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.WriteLine(" {0,-15}: {1}",myValues[i],myKeys[i]);
+            }
+            Console.WriteLine();
+        }
+        // 
+        public static void NewFile(string strF,string str,HelpYou hy){
+            // 
+            if(File.Exists(strF) == true){
+                // 
+                if(File.Exists(strF + hy.TenFile(strF)) == true)
+                    // 
+                    File.Delete(strF + hy.TenFile(strF));
+                // 
+                hy.TaoFile(strF + hy.TenFile(strF));
+                // 
+                string[] rF = File.ReadAllLines(strF);
+                foreach(string lines in rF){
+                    // 
+                    if(str != lines)
+                        // 
+                        hy.GhiFile(strF + hy.TenFile(strF),lines + "\n",true);
+                }
+                // 
+                File.Delete(strF);
+                // 
+                File.Move(strF + hy.TenFile(strF),strF);
+            }
         }
         // 
         public static void Table(string strT,string strC,HelpYou hy){
@@ -558,13 +655,25 @@ namespace HelloWorld
             _str = Console.ReadLine();
             return _str;
         }
-        // tra va bien
+        // tra va bien so
         public int ValueInt(string strName)
         {
             // 
             Console.Write(strName);
             _num = int.Parse(Console.ReadLine());
             return _num;
+        }
+       // tra va bien thoi gian ngay thang nam
+        public string ValueDate(string strName,DateTime date)
+        {
+            // Sử dụng TryParseExact để đảm bảo định dạng chính xác
+            while (!DateTime.TryParseExact(strName, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out date))
+            {
+                Console.Write("dd/MM/yyyy >");
+                strName = Console.ReadLine();
+            }
+            // 
+            return date.ToString("dd/MM/yyyy");
         }
         // dem so ky tu trong chuoi
         public int CountStr(string strC){
