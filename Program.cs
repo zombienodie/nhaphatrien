@@ -23,7 +23,11 @@ namespace HelloWorld
             HelpYou hy = new HelpYou();
             Random rd = new Random();
             DateTime dToday = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
-            
+
+            //
+            //Console.BackgroundColor = ConsoleColor.Green;
+            //Console.ForegroundColor = ConsoleColor.Red;
+         
             // 
             do
             {
