@@ -42,8 +42,7 @@ namespace HelloWorld
                     // 
                     Console.ReadKey();
                 }
-
-                
+            // 
             }while(str != "exit");
         }
         // 
