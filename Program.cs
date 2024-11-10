@@ -1076,11 +1076,11 @@ namespace HelloWorld
                         largeTextLines[4] += " 999  ";
                         break;
                     case '.':
-                        largeTextLines[0] += "   ";
-                        largeTextLines[1] += "   ";
-                        largeTextLines[2] += "   ";
-                        largeTextLines[3] += "## ";
-                        largeTextLines[4] += "## ";
+                        largeTextLines[0] += "  ";
+                        largeTextLines[1] += "  ";
+                        largeTextLines[2] += "  ";
+                        largeTextLines[3] += "  ";
+                        largeTextLines[4] += "# ";
                         break;
                     case '%':
                         largeTextLines[0] += "      ";
