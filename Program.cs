@@ -278,10 +278,6 @@ namespace HelloWorld
             if(num == 14)
                 // 
                 Console.ForegroundColor = ConsoleColor.Magenta;
-            // 
-            if(num == 15)
-                // 
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
     }
     // 
