@@ -151,6 +151,140 @@ namespace HelloWorld
         }
     }
     // 
+    public static void BackgroundColor(int num){
+        // 
+        if(num == 0)
+            // 
+            Console.BackgroundColor = ConsoleColor.Black;
+        // 
+        if(num == 1)
+            // 
+            Console.BackgroundColor = ConsoleColor.White;
+        // 
+        if(num == 2)
+            // 
+            Console.BackgroundColor = ConsoleColor.Blue;
+        // 
+        if(num == 3)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+        // 
+        if(num == 4)
+            // 
+            Console.BackgroundColor = ConsoleColor.Red;
+        // 
+        if(num == 5)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+        // 
+        if(num == 6)
+            // 
+            Console.BackgroundColor = ConsoleColor.Yellow;
+        // 
+        if(num == 7)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+        // 
+        if(num == 8)
+            // 
+            Console.BackgroundColor = ConsoleColor.Gray;
+        // 
+        if(num == 9)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+        // 
+        if(num == 10)
+            // 
+            Console.BackgroundColor = ConsoleColor.Green;
+        // 
+        if(num == 11)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+        // 
+        if(num == 12)
+            // 
+            Console.BackgroundColor = ConsoleColor.Cyan;
+        // 
+        if(num == 13)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
+        // 
+        if(num == 14)
+            // 
+            Console.BackgroundColor = ConsoleColor.Magenta;
+        // 
+        if(num == 15)
+            // 
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+    }
+    // 
+    public static void ForegroundColor(int num){
+        // 
+        if(num == 0)
+            // 
+            Console.ForegroundColor = ConsoleColor.Black;
+        // 
+        if(num == 1)
+            // 
+            Console.ForegroundColor = ConsoleColor.White;
+        // 
+        if(num == 2)
+            // 
+            Console.ForegroundColor = ConsoleColor.Blue;
+        // 
+        if(num == 3)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+        // 
+        if(num == 4)
+            // 
+            Console.ForegroundColor = ConsoleColor.Red;
+        // 
+        if(num == 5)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+        // 
+        if(num == 6)
+            // 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        // 
+        if(num == 7)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+        // 
+        if(num == 8)
+            // 
+            Console.ForegroundColor = ConsoleColor.Gray;
+        // 
+        if(num == 9)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        // 
+        if(num == 10)
+            // 
+            Console.ForegroundColor = ConsoleColor.Green;
+        // 
+        if(num == 11)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+        // 
+        if(num == 12)
+            // 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+        // 
+        if(num == 13)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+        // 
+        if(num == 14)
+            // 
+            Console.ForegroundColor = ConsoleColor.Magenta;
+        // 
+        if(num == 15)
+            // 
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+    }
+    // 
     public class myReverserClass : IComparer  {
         // Calls CaseInsensitiveComparer.Compare with the parameters reversed.
         int IComparer.Compare( Object x, Object y )  {
@@ -864,6 +998,120 @@ namespace HelloWorld
         public void ProcessFile(string path,string strfileName)
         {
             Console.WriteLine("{0}", path);
+        }
+        // 
+        public void PrintLargeText(string text)
+        {
+            // Khai báo mảng để chứa các dòng chữ lớn
+            string[] largeTextLines = new string[5];
+
+            foreach (char c in text.ToLower().Replace(" ",""))
+            {
+                switch (c)
+                {
+                    case '0':
+                        largeTextLines[0] += " 000  ";
+                        largeTextLines[1] += "0   0 ";
+                        largeTextLines[2] += "0   0 ";
+                        largeTextLines[3] += "0   0 ";
+                        largeTextLines[4] += " 000  ";
+                        break;
+                    case '1':
+                        largeTextLines[0] += ".1  ";
+                        largeTextLines[1] += " 1  ";
+                        largeTextLines[2] += " 1  ";
+                        largeTextLines[3] += " 1  ";
+                        largeTextLines[4] += "111 ";
+                        break;
+                    case '2':
+                        largeTextLines[0] += "222  ";
+                        largeTextLines[1] += "   2 ";
+                        largeTextLines[2] += "222  ";
+                        largeTextLines[3] += "2    ";
+                        largeTextLines[4] += "222  ";
+                        break;
+                    case '3':
+                        largeTextLines[0] += "333  ";
+                        largeTextLines[1] += "   3 ";
+                        largeTextLines[2] += "333  ";
+                        largeTextLines[3] += "   3 ";
+                        largeTextLines[4] += "333  ";
+                        break;
+                    case '4':
+                        largeTextLines[0] += "4  4 ";
+                        largeTextLines[1] += "4  4 ";
+                        largeTextLines[2] += "4444 ";
+                        largeTextLines[3] += "   4 ";
+                        largeTextLines[4] += "   4 ";
+                        break;
+                    case '5':
+                        largeTextLines[0] += "5555 ";
+                        largeTextLines[1] += "5    ";
+                        largeTextLines[2] += "5555 ";
+                        largeTextLines[3] += "   5 ";
+                        largeTextLines[4] += "5555 ";
+                        break;
+                    case '6':
+                        largeTextLines[0] += " 666  ";
+                        largeTextLines[1] += "6     ";
+                        largeTextLines[2] += " 666  ";
+                        largeTextLines[3] += "6   6 ";
+                        largeTextLines[4] += " 666  ";
+                        break;
+                    case '7':
+                        largeTextLines[0] += "77777 ";
+                        largeTextLines[1] += "   7  ";
+                        largeTextLines[2] += "  7   ";
+                        largeTextLines[3] += " 7    ";
+                        largeTextLines[4] += "7     ";
+                        break;
+                    case '8':
+                        largeTextLines[0] += " 888  ";
+                        largeTextLines[1] += "8   8 ";
+                        largeTextLines[2] += " 888  ";
+                        largeTextLines[3] += "8   8 ";
+                        largeTextLines[4] += " 888  ";
+                        break;
+                    case '9':
+                        largeTextLines[0] += " 999  ";
+                        largeTextLines[1] += "9   9 ";
+                        largeTextLines[2] += " 9999 ";
+                        largeTextLines[3] += "    9 ";
+                        largeTextLines[4] += " 999  ";
+                        break;
+                    case '.':
+                        largeTextLines[0] += "   ";
+                        largeTextLines[1] += "   ";
+                        largeTextLines[2] += "   ";
+                        largeTextLines[3] += "## ";
+                        largeTextLines[4] += "## ";
+                        break;
+                    case '%':
+                        largeTextLines[0] += "      ";
+                        largeTextLines[1] += "      ";
+                        largeTextLines[2] += "O  /  ";
+                        largeTextLines[3] += "  /   ";
+                        largeTextLines[4] += " /  O";
+                        break;
+                    case ':':
+                        largeTextLines[0] += "     ";
+                        largeTextLines[1] += " ##  ";
+                        largeTextLines[2] += "     ";
+                        largeTextLines[3] += " ##  ";
+                        largeTextLines[4] += "     ";
+                        break;
+                    // Bạn có thể thêm các chữ cái khác ở đây
+                    default:
+                        Console.WriteLine("Chữ cái không được hỗ trợ: " + c);
+                        break;
+                }
+            }
+
+            // In ra các dòng chữ lớn
+            foreach (string line in largeTextLines)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
