@@ -1090,11 +1090,11 @@ namespace HelloWorld
                         largeTextLines[4] += " /  O";
                         break;
                     case ':':
-                        largeTextLines[0] += "     ";
-                        largeTextLines[1] += " ##  ";
-                        largeTextLines[2] += "     ";
-                        largeTextLines[3] += " ##  ";
-                        largeTextLines[4] += "     ";
+                        largeTextLines[0] += "    ";
+                        largeTextLines[1] += " #  ";
+                        largeTextLines[2] += "    ";
+                        largeTextLines[3] += " #  ";
+                        largeTextLines[4] += "    ";
                         break;
                     // Bạn có thể thêm các chữ cái khác ở đây
                     default:
