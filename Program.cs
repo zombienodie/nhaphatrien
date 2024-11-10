@@ -149,140 +149,140 @@ namespace HelloWorld
             // 
             Console.WriteLine("└{0}┘",hy.Draw(hy.CountStr(strT) - 1,'─'));
         }
-    }
-    // 
-    public static void BackgroundColor(int num){
         // 
-        if(num == 0)
+        public static void BackgroundColor(int num){
             // 
-            Console.BackgroundColor = ConsoleColor.Black;
+            if(num == 0)
+                // 
+                Console.BackgroundColor = ConsoleColor.Black;
+            // 
+            if(num == 1)
+                // 
+                Console.BackgroundColor = ConsoleColor.White;
+            // 
+            if(num == 2)
+                // 
+                Console.BackgroundColor = ConsoleColor.Blue;
+            // 
+            if(num == 3)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+            // 
+            if(num == 4)
+                // 
+                Console.BackgroundColor = ConsoleColor.Red;
+            // 
+            if(num == 5)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkRed;
+            // 
+            if(num == 6)
+                // 
+                Console.BackgroundColor = ConsoleColor.Yellow;
+            // 
+            if(num == 7)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkYellow;
+            // 
+            if(num == 8)
+                // 
+                Console.BackgroundColor = ConsoleColor.Gray;
+            // 
+            if(num == 9)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+            // 
+            if(num == 10)
+                // 
+                Console.BackgroundColor = ConsoleColor.Green;
+            // 
+            if(num == 11)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+            // 
+            if(num == 12)
+                // 
+                Console.BackgroundColor = ConsoleColor.Cyan;
+            // 
+            if(num == 13)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkCyan;
+            // 
+            if(num == 14)
+                // 
+                Console.BackgroundColor = ConsoleColor.Magenta;
+            // 
+            if(num == 15)
+                // 
+                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+        }
         // 
-        if(num == 1)
+        public static void ForegroundColor(int num){
             // 
-            Console.BackgroundColor = ConsoleColor.White;
-        // 
-        if(num == 2)
+            if(num == 0)
+                // 
+                Console.ForegroundColor = ConsoleColor.Black;
             // 
-            Console.BackgroundColor = ConsoleColor.Blue;
-        // 
-        if(num == 3)
+            if(num == 1)
+                // 
+                Console.ForegroundColor = ConsoleColor.White;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-        // 
-        if(num == 4)
+            if(num == 2)
+                // 
+                Console.ForegroundColor = ConsoleColor.Blue;
             // 
-            Console.BackgroundColor = ConsoleColor.Red;
-        // 
-        if(num == 5)
+            if(num == 3)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkRed;
-        // 
-        if(num == 6)
+            if(num == 4)
+                // 
+                Console.ForegroundColor = ConsoleColor.Red;
             // 
-            Console.BackgroundColor = ConsoleColor.Yellow;
-        // 
-        if(num == 7)
+            if(num == 5)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkRed;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkYellow;
-        // 
-        if(num == 8)
+            if(num == 6)
+                // 
+                Console.ForegroundColor = ConsoleColor.Yellow;
             // 
-            Console.BackgroundColor = ConsoleColor.Gray;
-        // 
-        if(num == 9)
+            if(num == 7)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-        // 
-        if(num == 10)
+            if(num == 8)
+                // 
+                Console.ForegroundColor = ConsoleColor.Gray;
             // 
-            Console.BackgroundColor = ConsoleColor.Green;
-        // 
-        if(num == 11)
+            if(num == 9)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkGray;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-        // 
-        if(num == 12)
+            if(num == 10)
+                // 
+                Console.ForegroundColor = ConsoleColor.Green;
             // 
-            Console.BackgroundColor = ConsoleColor.Cyan;
-        // 
-        if(num == 13)
+            if(num == 11)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
-        // 
-        if(num == 14)
+            if(num == 12)
+                // 
+                Console.ForegroundColor = ConsoleColor.Cyan;
             // 
-            Console.BackgroundColor = ConsoleColor.Magenta;
-        // 
-        if(num == 15)
+            if(num == 13)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
             // 
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
-    }
-    // 
-    public static void ForegroundColor(int num){
-        // 
-        if(num == 0)
+            if(num == 14)
+                // 
+                Console.ForegroundColor = ConsoleColor.Magenta;
             // 
-            Console.ForegroundColor = ConsoleColor.Black;
-        // 
-        if(num == 1)
-            // 
-            Console.ForegroundColor = ConsoleColor.White;
-        // 
-        if(num == 2)
-            // 
-            Console.ForegroundColor = ConsoleColor.Blue;
-        // 
-        if(num == 3)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-        // 
-        if(num == 4)
-            // 
-            Console.ForegroundColor = ConsoleColor.Red;
-        // 
-        if(num == 5)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-        // 
-        if(num == 6)
-            // 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-        // 
-        if(num == 7)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-        // 
-        if(num == 8)
-            // 
-            Console.ForegroundColor = ConsoleColor.Gray;
-        // 
-        if(num == 9)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-        // 
-        if(num == 10)
-            // 
-            Console.ForegroundColor = ConsoleColor.Green;
-        // 
-        if(num == 11)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-        // 
-        if(num == 12)
-            // 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-        // 
-        if(num == 13)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-        // 
-        if(num == 14)
-            // 
-            Console.ForegroundColor = ConsoleColor.Magenta;
-        // 
-        if(num == 15)
-            // 
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            if(num == 15)
+                // 
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        }
     }
     // 
     public class myReverserClass : IComparer  {
